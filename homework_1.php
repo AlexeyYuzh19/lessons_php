@@ -283,7 +283,7 @@ $b = 777;
         </p>
 
         <div id="footer">
-            <p>Copyright &copy; <strong style="color: #013b33;"><?= $year; ?></strong> &middot; <em>minimalistica</em> &middot;
+            <p>Copyright &copy; <strong style="color: #013b33; font-size: 1.7em;"><?= $year; ?></strong> &middot; <em>minimalistica</em> &middot;
                 Design: Luka Cvrk, <a href="http://www.solucija.com/" title="Free CSS Templates">Solucija</a></p>
         </div>
     </div>
