@@ -377,7 +377,7 @@
         <h2>
         <?php
         function getCurrentTime() {
-            $hour = date('G');
+            $hour = date('H');
             $minute = date('i');
             $hourText = getNoun($hour, array('час', 'часа', 'часов'));
             $minuteText = getNoun($minute, array('минута', 'минуты', 'минут'));
