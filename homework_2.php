@@ -219,6 +219,9 @@
         </p>
         <strong>Деление :</strong><br>
         function division($num1, $num2) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;if ($num2 == 0) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "Нарушено правило деления - на ноль делить нельзя";<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
             &nbsp;&nbsp;&nbsp;&nbsp;return $num1 / $num2;<br>
         }<br>
         <?php
@@ -235,6 +238,9 @@
             }
 
             function division($num1, $num2) {
+                if ($num2 == 0) {
+                    return "Нарушено правило деления - на ноль делить нельзя";
+                }
                 return $num1 / $num2;
             }
         ?>       
