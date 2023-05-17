@@ -60,7 +60,7 @@
 <body>
     <header>
         <p>
-            <?= date('l jS F Y') . " ( Сегодня - " . $days[$dayOfWeek] . ", " . $today . " " . $months[$month] . " " . $year . " )"; ?>
+            <?= date('l jS F Y') ?> ( Сегодня - <?= $days[$dayOfWeek] . ", " . $today . " " . $months[$month] . " " . $year; ?> )
         </p>
     </header>
     <main>
@@ -402,7 +402,7 @@
     </main>
     <footer>
         <p>
-            <?= "Copyright &copy; ". date('Y'); ?>
+            Copyright &copy;<?= ' ' . date('Y'); ?>
         </p>
     </footer>
     <script>   
