@@ -54,7 +54,7 @@ $menuItems = [
             background-color: #a7aa70;
             font-size: 30px;
             color: #fff;
-            padding: 10px;
+            padding: 50px;
         }
 
         header {
