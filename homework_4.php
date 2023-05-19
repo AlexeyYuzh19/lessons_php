@@ -51,12 +51,31 @@ $images = [
                 в какой-то бы ни было форме без разрешения владельца авторских прав.'>
     <title><?= $title; ?></title>
     <style>
+        html {
+            background-color: #e3ebe2;
+        }
+
+        body {
+            width: 1300px;
+            margin: 0 auto;
+            background-color: #95a792;
+            padding: 20px 100px;
+            border: 2px solid #4a4b02;
+            font: .8em Georgia, "Times New Roman", Serif;
+            background-image: url(img/oldpaper.jpeg);
+            background-repeat: repeat-x repeat-y;
+            background-position: center center;
+            background-attachment: fixed;
+            margin: 25px auto;
+        }
+
         header,
         footer {
             background-color: #a7aa70;
             font-size: 30px;
             color: #fff;
             padding: 50px;
+            border-radius: 15px;
         }
 
         header {
@@ -73,14 +92,15 @@ $images = [
 
         h2 {
             color: #011d01;
+            font-size: 22px;
         }
 
         h3 {
             color: #171757;
+            font-size: 18px;
         }
 
         p {
-            color: #554236;
             font-size: 20px;
         }
 
@@ -95,6 +115,23 @@ $images = [
             margin: 10px;
             cursor: pointer;
         }
+
+        .line_ti {
+            width: 800px;
+            height: 12px;
+            margin: 0 auto;
+            border: 1px solid #4a4b02;
+            border-radius: 3px;
+            color: #fff;
+            background-color: #a7aa70;
+
+        }
+
+        .movementLi {
+            width: 0;
+            height: 12px;
+            transition: 0.25s;
+        }
     </style>
 </head>
 
@@ -105,6 +142,12 @@ $images = [
         </p>
     </header>
     <main>
+
+        <h1 style="text-align: center; color: #013b33;" id="wordWi"></h1>
+        <div class="line_ti">
+            <div class="movementLi" id="movementLineWi"></div>
+        </div>
+
         <h1><?= $h1; ?><br><span style="color: #013b33;">Практическое задание</span></h1>
         <h2>Задача 1</h2>
         <h3>
@@ -155,6 +198,12 @@ $images = [
             <strong>showImage()</strong>, которая создает модальное окно с увеличенным изображением и устанавливает обработчик
             клика на него для закрытия окна.<br>Стили для галереи и изображений заданы в CSS.
         </p>
+
+        <h2 style="color: #013b33;">
+            &nbsp;&nbsp;&nbsp;<a class="page" href="homework_1.php" target="_blank"><strong>Урок 1 PHP</strong></a>
+            &nbsp;&nbsp;&nbsp;<a class="page" href="homework_2.php" target="_blank"><strong>Урок 2 PHP</strong></a>
+            &nbsp;&nbsp;&nbsp;<a class="page" href="homework_3.php" target="_blank"><strong>Урок 3 PHP</strong></a>
+        </h2>
     </main>
     <footer>
         <p>
@@ -187,6 +236,73 @@ $images = [
                 modal.parentNode.removeChild(modal);
             }
         }
+
+        let phrases = [
+            "Life is a journey",
+            "The best is yet to come",
+            "Life is what you make it",
+            "Live and let live",
+            "It's never too late",
+            "The sky is the limit",
+            "Live life to the fullest",
+            "Life is a rollercoaster",
+            "You only live once",
+            "No pain, no gain",
+            "The future is bright",
+            "Every day is a new beginning",
+            "Life is a beautiful ride",
+            "Life is a balance",
+            "Life is a learning experience",
+            "Life is a gift",
+            "Life is an adventure",
+            "Life is a journey of discovery",
+            "Life is a blessing",
+            "Life is a challenge"
+        ];
+
+        let currentPhrase,
+            currentIndex,
+            timer,
+            movementLineWidth,
+            movementLineInterval,
+            movementLineIncrement
+        const getRandomPhrase = () => {
+                var e = Math.floor(Math.random() * phrases.length),
+                    t = phrases[e]
+                return (currentPhrase = t), (currentIndex = e), t
+            },
+            displayPhrase = () => {
+                var e = getRandomPhrase()
+                let t = document.getElementById("wordWi")
+                t.innerHTML = e
+            },
+            displayMovementLine = () => {
+                let e = document.getElementById("movementLineWi");
+                (e.style.width = movementLineWidth + "%"),
+                (e.style.transition = "1s"),
+                movementLineWidth < 85 ?
+                    (e.style.background = "rgb(250, 250, 175)") :
+                    (e.style.background =
+                        "linear-gradient(150deg, rgb(250, 250, 175), rgb(125, 125, 250))"),
+                    (movementLineWidth += movementLineIncrement),
+                    100 < movementLineWidth && (movementLineWidth = 0)
+            },
+            startTimer = () => {
+                timer = setInterval(() => {
+                    displayPhrase(), displayMovementLine()
+                }, movementLineInterval)
+            },
+            stopTimer = () => {
+                clearInterval(timer)
+            },
+            initTimer = () => {
+                ;
+                (movementLineWidth = 10),
+                (movementLineInterval = 7e3),
+                (movementLineIncrement = 100 / (phrases.length - 1)),
+                startTimer()
+            }
+        displayPhrase(), initTimer()
     </script>
 </body>
 
