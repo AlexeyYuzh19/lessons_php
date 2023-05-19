@@ -159,13 +159,18 @@ $images = [
             по миниатюре нужно показывать полноразмерное изображение в модальном окне.
         </h3>
         <h3>Решение :</h3>
+        <h2>Вариант 1 отображения файлов в формате изображения - с открытием файла в отдельном окне</h2>
         <p>
-            Вариант кода :<br>
+            Описание кода :<br>
             !-- < ?php --<br>
                 // Путь к папке с изображениями<br>
                 <strong>$dir = "images/";</strong><br>
                 // Получаем список файлов в папке<br>
                 <strong>$files = scandir($dir)</strong>;<br>
+                // Проверка наличия файлов в папке<br>
+                <strong>if (empty($files)) {<br>
+                    echo "В заданном ресурсе нет изображений для отображения";<br>
+                    }</strong><br>
                 // Цикл для вывода уменьшенных изображений<br>
                 <strong>foreach ($files as $file) {</strong><br>
                 // Проверяем, является ли файл изображением<br>
@@ -186,6 +191,21 @@ $images = [
                 библиотеку <strong>Lightbox</strong>. Для этого нужно подключить ее файлы и добавить атрибут
                 <strong>data-lightbox="gallery"</strong> к ссылкам на изображения.
         </p>
+        <div class="gallery">
+            <?php
+            $dir = "images/";
+            $files = scandir($dir);
+            if (empty($files)) {
+                echo "<h1>В заданном ресурсе нет изображений для отображения</h1>";
+            }
+            foreach ($files as $file) {
+                if (in_array(pathinfo($file, PATHINFO_EXTENSION), array("jpg", "jpeg", "png", "gif"))) {
+                    echo '<a href="' . $dir . $file . '" target="_blank"><img src="' . $dir . $file . '" width="200"></a>';
+                }
+            }
+            ?>
+        </div>
+        <h2>Вариант 2 отображения файлов в формате изображения - с модальным окном</h2>
         <div class="gallery">
             <?php foreach ($images as $image) { ?>
                 <img src="<?php echo $image; ?>" onclick="showImage(this.src)">
