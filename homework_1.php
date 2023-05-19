@@ -15,15 +15,22 @@ $b = 777;
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <title><?= $title; ?></title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
+        html {
+            background-color: #e3ebe2;
         }
 
         body {
+            width: 1300px;
+            margin: 0 auto;
+            background-color: #95a792;
+            padding: 20px 100px;
+            border: 2px solid #4a4b02;
             font: .8em Georgia, "Times New Roman", Serif;
-            background: #fff;
-            color: #777;
+            background-image: url(img/oldpaper.jpeg);
+            background-repeat: repeat-x repeat-y;
+            background-position: center center;
+            background-attachment: fixed;
+            margin: 25px auto;
         }
 
         a {
@@ -36,7 +43,7 @@ $b = 777;
         }
 
         p {
-            line-height: 1.7em;
+            line-height: 3em;
             margin: 0 0 15px;
         }
 
@@ -58,6 +65,7 @@ $b = 777;
             font-size: 2.6em;
             padding: 0 0 10px;
             margin: 0 0 15px;
+            font-size: 24px;
         }
 
         h3 {
@@ -228,7 +236,7 @@ $b = 777;
                 Следовательно, выражение (int)0 === (int)'hello, world' сравнивает два значения типа int,
                 которые равны между собой, поэтому результатом является "true".
             </p>
-            <p>&not; <a href="#">read more</a></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <p>&not; <a href="#">read more</a></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
 
         <h3 style="color: #013b33;">
