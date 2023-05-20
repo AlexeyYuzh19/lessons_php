@@ -62,7 +62,7 @@ $images = [
             padding: 20px 100px;
             border: 2px solid #4a4b02;
             font: .8em Georgia, "Times New Roman", Serif;
-            background-image: url(img/oldpaper.jpeg);
+            background-image: url(../img/oldpaper.jpeg);
             background-repeat: repeat-x repeat-y;
             background-position: center center;
             background-attachment: fixed;
@@ -164,7 +164,7 @@ $images = [
             Описание кода :<br>
             !-- < ?php --<br>
                 // Путь к папке с изображениями<br>
-                <strong>$dir = "images/";</strong><br>
+                <strong>$dir = "../images/";</strong><br>
                 // Получаем список файлов в папке<br>
                 <strong>$files = scandir($dir)</strong>;<br>
                 // Проверка наличия файлов в папке<br>
@@ -193,23 +193,24 @@ $images = [
         </p>
         <div class="gallery">
             <?php
-            $dir = "images/";
+            $dir = "../images/";
             $files = scandir($dir);
-            if (empty($files)) {
-                echo "<h1>В заданном ресурсе нет изображений для отображения</h1>";
+            if (empty($files)) { ?>
+                        <h1>В заданном ресурсе нет изображений для отображения</h1>
+                        <?php
             }
             foreach ($files as $file) {
-                if (in_array(pathinfo($file, PATHINFO_EXTENSION), array("jpg", "jpeg", "png", "gif"))) {
+                if (in_array(pathinfo($file, PATHINFO_EXTENSION), ["jpg", "jpeg", "png", "gif", ])) {
                     echo '<a href="' . $dir . $file . '" target="_blank"><img src="' . $dir . $file . '" width="200"></a>';
                 }
-            }
-            ?>
+            } ?>
         </div>
         <h2>Вариант 2 отображения файлов в формате изображения - с модальным окном</h2>
         <div class="gallery">
             <?php foreach ($images as $image) { ?>
                 <img src="<?php echo $image; ?>" onclick="showImage(this.src)">
-            <?php } ?>
+            <?php
+            } ?>
         </div>
         <p>
             Для данной организации представления галереи фотографий написан вариант кода, который использует массив
@@ -218,12 +219,13 @@ $images = [
             <strong>showImage()</strong>, которая создает модальное окно с увеличенным изображением и устанавливает обработчик
             клика на него для закрытия окна.<br>Стили для галереи и изображений заданы в CSS.
         </p>
-
+        
         <h2 style="color: #013b33;">
             &nbsp;&nbsp;&nbsp;<a class="page" href="homework_1.php" target="_blank"><strong>Урок 1 PHP</strong></a>
             &nbsp;&nbsp;&nbsp;<a class="page" href="homework_2.php" target="_blank"><strong>Урок 2 PHP</strong></a>
             &nbsp;&nbsp;&nbsp;<a class="page" href="homework_3.php" target="_blank"><strong>Урок 3 PHP</strong></a>
         </h2>
+        
     </main>
     <footer>
         <p>
