@@ -71,21 +71,7 @@ $h1 = 'Урок 2. Условные блоки, ветвление функци�
 
         p {
             font-size: 18px;
-        }
-
-        #quote {
-            font-size: 30px;
-            font-weight: bold;
-            color: #013b33;
-            margin-bottom: 30px;
-        }
-
-        #progress {
-            height: 10px;
-            background-color: rgb(141, 153, 30);
-            width: 0%;
-            transition: width 1s linear;
-        }
+        }        
     </style>
 </head>
 
@@ -96,8 +82,6 @@ $h1 = 'Урок 2. Условные блоки, ветвление функци�
         </p>
     </header>
     <main>
-        <div id="quote"></div>
-        <div id="progress"></div>
         <h1><?= $h1; ?><br><span style="color: #013b33;">Практическое задание</span></h1>
         <h2>Задача 1</h2>
         <h3>
@@ -443,41 +427,7 @@ $h1 = 'Урок 2. Условные блоки, ветвление функци�
         <p>
             Copyright &copy;<?= ' ' . date('Y'); ?>
         </p>
-    </footer>
-    <script>
-        const quotes = [
-            "Все, что не делается – к лучшему.",
-            "Счастье не в деньгах, а в их количестве.",
-            "Кто не рискует, тот не пьет шампанское.",
-            "Жизнь – это не ожидание, а использование каждой минуты.",
-            "Лучше быть головой у мышеловки, чем хвостом у кота.",
-            "Не говори, что ты устал, говори, что ты работал.",
-            "Самое трудное – это начать действовать. Все остальное зависит только от упорства.",
-            "Успех – это не конечная точка, это постоянное движение вперед.",
-            "Не ждите, что успех придет к вам – идите за ним!",
-            "Лучший способ предсказать будущее – создать его самому.",
-        ];
-
-        function getRandomQuote() {
-            var index = Math.floor(Math.random() * quotes.length);
-            return quotes[index];
-        }
-
-        function showQuote() {
-            var quoteDiv = document.getElementById("quote"),
-                quote = getRandomQuote();
-            quoteDiv.innerHTML = quote;
-            var progressDiv = document.getElementById("progress");
-            (progressDiv.style.width = "0%"),
-            (progressDiv.style.backgroundImage = "url('green.png?" + Math.random() + "')")
-            var width = 0,
-                interval = setInterval(function() {
-                    ;
-                    (width += 10), (progressDiv.style.width = width + "%"), 90 <= width && clearInterval(interval)
-                }, 1e3)
-        }
-        showQuote(), setInterval(showQuote, 1e4)
-    </script>
+    </footer>    
 </body>
 
 </html>
