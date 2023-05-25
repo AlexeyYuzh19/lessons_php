@@ -114,24 +114,7 @@ $images = [
             width: 200px;
             margin: 10px;
             cursor: pointer;
-        }
-
-        .line_ti {
-            width: 800px;
-            height: 12px;
-            margin: 0 auto;
-            border: 1px solid #4a4b02;
-            border-radius: 3px;
-            color: #fff;
-            background-color: #a7aa70;
-
-        }
-
-        .movementLi {
-            width: 0;
-            height: 12px;
-            transition: 0.25s;
-        }
+        }        
     </style>
 </head>
 
@@ -142,12 +125,6 @@ $images = [
         </p>
     </header>
     <main>
-
-        <h1 style="text-align: center; color: #013b33;" id="wordWi"></h1>
-        <div class="line_ti">
-            <div class="movementLi" id="movementLineWi"></div>
-        </div>
-
         <h1><?= $h1; ?><br><span style="color: #013b33;">Практическое задание</span></h1>
         <h2>Задача 1</h2>
         <h3>
@@ -257,74 +234,7 @@ $images = [
             modal.onclick = function() {
                 modal.parentNode.removeChild(modal);
             }
-        }
-
-        let phrases = [
-            "Life is a journey",
-            "The best is yet to come",
-            "Life is what you make it",
-            "Live and let live",
-            "It's never too late",
-            "The sky is the limit",
-            "Live life to the fullest",
-            "Life is a rollercoaster",
-            "You only live once",
-            "No pain, no gain",
-            "The future is bright",
-            "Every day is a new beginning",
-            "Life is a beautiful ride",
-            "Life is a balance",
-            "Life is a learning experience",
-            "Life is a gift",
-            "Life is an adventure",
-            "Life is a journey of discovery",
-            "Life is a blessing",
-            "Life is a challenge"
-        ];
-
-        let currentPhrase,
-            currentIndex,
-            timer,
-            movementLineWidth,
-            movementLineInterval,
-            movementLineIncrement
-        const getRandomPhrase = () => {
-                var e = Math.floor(Math.random() * phrases.length),
-                    t = phrases[e]
-                return (currentPhrase = t), (currentIndex = e), t
-            },
-            displayPhrase = () => {
-                var e = getRandomPhrase()
-                let t = document.getElementById("wordWi")
-                t.innerHTML = e
-            },
-            displayMovementLine = () => {
-                let e = document.getElementById("movementLineWi");
-                (e.style.width = movementLineWidth + "%"),
-                (e.style.transition = "1s"),
-                movementLineWidth < 85 ?
-                    (e.style.background = "rgb(250, 250, 175)") :
-                    (e.style.background =
-                        "linear-gradient(150deg, rgb(250, 250, 175), rgb(125, 125, 250))"),
-                    (movementLineWidth += movementLineIncrement),
-                    100 < movementLineWidth && (movementLineWidth = 0)
-            },
-            startTimer = () => {
-                timer = setInterval(() => {
-                    displayPhrase(), displayMovementLine()
-                }, movementLineInterval)
-            },
-            stopTimer = () => {
-                clearInterval(timer)
-            },
-            initTimer = () => {
-                ;
-                (movementLineWidth = 10),
-                (movementLineInterval = 7e3),
-                (movementLineIncrement = 100 / (phrases.length - 1)),
-                startTimer()
-            }
-        displayPhrase(), initTimer()
+        }        
     </script>
 </body>
 
