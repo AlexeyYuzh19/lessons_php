@@ -21,7 +21,7 @@ $translit = [
     'Г' => 'G', 'Д' => 'D', 'Е' => 'E', 'Ё' => 'Yo', 'Ж' => 'Zh', 'З' => 'Z', 'И' => 'I', 'Й' => 'Y', 'К' => 'K',
     'Л' => 'L', 'М' => 'M', 'Н' => 'N', 'О' => 'O', 'П' => 'P', 'Р' => 'R', 'С' => 'S', 'Т' => 'T', 'У' => 'U',
     'Ф' => 'F', 'Х' => 'H', 'Ц' => 'Ts', 'Ч' => 'Ch', 'Ш' => 'Sh', 'Щ' => 'Sch', 'Ъ' => '^', 'Ы' => 'Y', 'Ь' => '*',
-    'Э' => 'E', 'Ю' => 'Yu', 'Я' => 'Ya', '.' => '.', ',' => ',', ':' => ':', ';' => ';', '-' => '-'
+    'Э' => 'E', 'Ю' => 'Yu', 'Я' => 'Ya'
 ];    // объявляем массив с транслитерацией
 $menuItems = [
     ['title' => 'Главная', 'link' => 'https://gb.ru/', 'subitems' => []],
@@ -99,21 +99,7 @@ $menuItems = [
 
         p {
             font-size: 20px;
-        }
-
-        #quote {
-            font-size: 30px;
-            font-weight: bold;
-            color: #013b33;
-            margin-bottom: 30px;
-        }
-
-        #progress {
-            height: 10px;
-            background-color: rgb(141, 153, 30);
-            width: 0%;
-            transition: width 1s linear;
-        }
+        }        
     </style>
 </head>
 
@@ -123,9 +109,7 @@ $menuItems = [
             <?= date('l jS F Y') ?> ( Сегодня - <?= $days[$dayOfWeek] . ', ' . $today . ' ' . $months[$month] . ' ' . $year; ?> )
         </p>
     </header>
-    <main>
-        <div id='quote'></div>
-        <div id='progress'></div>
+    <main>        
         <h1><?= $h1; ?><br><span style="color: #013b33;">Практическое задание</span></h1>
         <h2>Задача 1</h2>
         <h3>
@@ -347,41 +331,7 @@ $menuItems = [
         <p>
             Copyright &copy;<?= ' ' . date('Y'); ?>
         </p>
-    </footer>
-    <script>
-        const quotes = [
-            'Величайшая слава в жизни заключается не в том, чтобы никогда не падать, а в том, чтобы подниматься каждый раз, когда мы падаем. - Нельсон Мандела',
-            'Успех не окончателен, неудача не фатальна: главное - мужество продолжать. - Уинстон Черчилль',
-            'Единственный способ делать великую работу - любить то, что ты делаешь. - Стив Джобс',
-            'Счастье - это не что-то готовое. Оно приходит от ваших собственных действий. - Далай-лама XIV',
-            'Поверь, что ты можешь, и ты уже на полпути. - Теодор Рузвельт',
-            'Лучший способ предсказать будущее - это изобрести его. - Алан Кей',
-            'Единственная истинная мудрость заключается в том, чтобы знать, что ты ничего не знаешь. - Сократ',
-            'Будьте тем изменением, которое вы хотите видеть в мире - Махатма Ганди',
-            'В трех словах я могу подытожить все, что я узнал о жизни: она продолжается. - Роберт Фрост',
-            'Жизнь - это 10% того, что с нами происходит, и 90% того, как мы на это реагируем. - Чарльз Р. Свиндолл',
-        ];
-
-        function getRandomQuote() {
-            var index = Math.floor(Math.random() * quotes.length);
-            return quotes[index];
-        }
-
-        function showQuote() {
-            var quoteDiv = document.getElementById('quote'),
-                quote = getRandomQuote();
-            quoteDiv.innerHTML = quote;
-            var progressDiv = document.getElementById('progress');
-            (progressDiv.style.width = '0%'),
-            (progressDiv.style.backgroundImage = 'url("green.png?" + Math.random() + "")')
-            var width = 0,
-                interval = setInterval(function() {
-                    ;
-                    (width += 10), (progressDiv.style.width = width + '%'), 90 <= width && clearInterval(interval)
-                }, 1e3)
-        }
-        showQuote(), setInterval(showQuote, 1e4)
-    </script>
+    </footer>   
+        
 </body>
-
 </html>
