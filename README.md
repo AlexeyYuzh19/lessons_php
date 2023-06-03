@@ -115,9 +115,10 @@ c. По клику на товар открывается карточка то�
 
 ## Решение:
 
-### [ http://s96763eu.beget.tech/PHP/lesson_6/calc.php ]( "Переход на сайт на страницу 'Урок 6 PHP' - http://s96763eu.beget.tech/PHP/lesson_6/calc.php") - задания 1 и 2.
 
-### [ http://s96763eu.beget.tech/PHP/lesson_6/public/index.php ]( "http://s96763eu.beget.tech/PHP/lesson_6/public/index.php") - задания с 3 по 5.
+### [http://s96763eu.beget.tech/PHP/lesson_6/calc.php] ("Переход на сайт на страницу 'Урок 6 PHP' - http://s96763eu.beget.tech/PHP/lesson_6/calc.php") - задания 1 и 2.
+
+### [http://s96763eu.beget.tech/PHP/lesson_6/public/index.php] ("http://s96763eu.beget.tech/PHP/lesson_6/public/index.php") - задания с 3 по 5.
 
 
 
