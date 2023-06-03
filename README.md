@@ -120,3 +120,4 @@ c. По клику на товар открывается карточка то�
 ### [ http://s96763eu.beget.tech/PHP/lesson_6/public/index.php ]( "http://s96763eu.beget.tech/PHP/lesson_6/public/index.php") - задания с 3 по 5.
 
 
+
